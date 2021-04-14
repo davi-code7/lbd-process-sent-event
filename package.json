@@ -1,0 +1,18 @@
+{
+  "name": "process-sent-event",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "orchy-base-code7": "^1.3.6"
+  },
+  "scripts": {
+    "predeploy": "rm -rf node_modules/orchy-base-code7 && npm install --platform=linux --arch=x64 --target=8.10.0 orchy-base-code7",
+    "deploy": "yarn serverless deploy -v",
+    "postdeploy": "rm -rf node_modules/orchy-base-code7 && npm install orchy-base-code7",
+    "refresh": "rm -rf ./node_modules ./yarn.lock ./yarn-error.log && yarn install"
+  },
+  "devDependencies": {
+    "serverless": "^2.34.0"
+  }
+}
